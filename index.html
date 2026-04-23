@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ひのえ — 作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:        #fdf3e7;
+      --bg2:       #fbe8d0;
+      --orange:    #c0621a;
+      --orange-l:  #d4874a;
+      --gold:      #c8972a;
+      --gold-l:    #e8c86a;
+      --cream:     #fffaf4;
+      --text:      #5a3a1a;
+      --text-m:    #8a6040;
+      --text-l:    #b08060;
+      --border:    rgba(200,151,42,0.35);
+      --border-l:  rgba(200,151,42,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', sans-serif;
+      background:
+        radial-gradient(ellipse at 25% 20%, rgba(255,210,130,0.5) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 75%, rgba(232,160,80,0.3) 0%, transparent 50%),
+        var(--bg);
+      min-height: 100vh;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── オーナメント ── */
+    .orn { color: var(--gold); letter-spacing: 0.6em; font-size: 0.75rem; }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    .hero-sun {
+      width: clamp(100px, 22vw, 150px);
+      height: auto;
+      margin-bottom: 1.6rem;
+      filter: drop-shadow(0 8px 24px rgba(220,140,60,0.35));
+      animation: floatSun 4.5s ease-in-out infinite;
+    }
+
+    @keyframes floatSun {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    .hero-orn {
+      font-size: 0.72rem;
+      letter-spacing: 0.55em;
+      color: var(--gold);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.8rem, 7vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--text-l);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-divider {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .stat-unit {
+      font-size: 0.8rem;
+      color: var(--text-l);
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: var(--text-l);
+      margin-top: 0.25rem;
+      font-weight: 300;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 0.75rem 2.4rem;
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      color: var(--orange);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-decoration: none;
+      background: rgba(255,250,244,0.7);
+      backdrop-filter: blur(4px);
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .hero-btn:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* ══════════════════════════════
+       SECTION
+    ══════════════════════════════ */
+    .section {
+      padding: 5rem 1.5rem 6rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-orn {
+      font-size: 0.68rem;
+      letter-spacing: 0.6em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--text-l);
+    }
+
+    /* ══════════════════════════════
+       CARD GRID
+    ══════════════════════════════ */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow:
+        0 2px 16px rgba(200,151,42,0.1),
+        inset 0 0 0 1px rgba(255,255,255,0.8);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 16px 40px rgba(200,151,42,0.2),
+        inset 0 0 0 1px rgba(255,255,255,0.8);
+    }
+
+    /* カードサムネイル：スクリーンショットあり */
+    .card-thumb-screen {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      border-bottom: 1px solid var(--border-l);
+      overflow: hidden;
+    }
+
+    .card-thumb-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .card-thumb-screen .card-status {
+      position: absolute;
+      bottom: 0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* カードサムネイル：絵文字（スクリーンショットなし） */
+    .card-thumb {
+      width: 100%;
+      padding: 2rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,220,140,0.4) 0%, transparent 70%),
+        var(--bg);
+      border-bottom: 1px solid var(--border-l);
+      position: relative;
+    }
+
+    .card-thumb-orn {
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      color: var(--gold-l);
+      margin-bottom: 1rem;
+    }
+
+    .card-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      box-shadow: 0 4px 16px rgba(200,151,42,0.15);
+      margin-bottom: 0.9rem;
+    }
+
+    .card-status {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+
+    .status-done  { color: #5a7a30; border-color: #9aba60; background: #f0f8e8; }
+    .status-live  { color: #1a6a4a; border-color: #5abaa0; background: #e8f8f4; }
+    .status-wip   { color: #8a5a10; border-color: var(--gold-l); background: #fdf8e8; }
+    .status-idea  { color: #6a3a7a; border-color: #c090d8; background: #f8eef8; }
+
+    .card-body {
+      padding: 1.2rem 1.3rem 1.4rem;
+    }
+
+    .card-orn-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.6rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+    }
+
+    .card-orn-line::before,
+    .card-orn-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border));
+    }
+
+    .card-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 0.55rem;
+    }
+
+    .card-desc {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--text-m);
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem;
+      margin-top: 0.9rem;
+    }
+
+    .tag {
+      font-size: 0.6rem;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-l);
+      background: rgba(255,250,244,0.8);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+    }
+
+    /* ══════════════════════════════
+       MODAL
+    ══════════════════════════════ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(90,58,26,0.45);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      max-height: 88svh;
+      overflow-y: auto;
+      box-shadow:
+        0 32px 80px rgba(90,58,26,0.28),
+        inset 0 0 0 1px rgba(255,255,255,0.9);
+      transform: translateY(28px) scale(0.96);
+      transition: transform 0.35s cubic-bezier(0.34,1.5,0.64,1);
+    }
+
+    .modal-overlay.open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-top {
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-l);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,220,140,0.35) 0%, transparent 65%),
+        var(--bg);
+    }
+
+    .modal-orn {
+      font-size: 0.65rem;
+      letter-spacing: 0.6em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* ── ギャラリー ── */
+    .modal-gallery {
+      border-radius: 22px 22px 0 0;
+      overflow: hidden;
+      background: linear-gradient(160deg, #fde8d0 0%, #fdf3e7 100%);
+    }
+
+    .gallery-main {
+      width: 100%;
+      min-height: 200px;
+      max-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 1.2rem;
+      font-size: 5rem;
+      box-sizing: border-box;
+    }
+
+    .gallery-main img {
+      max-width: 100%;
+      max-height: 330px;
+      object-fit: contain;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(90,58,26,0.12);
+      cursor: zoom-in;
+      transition: opacity 0.15s;
+    }
+    .gallery-main img:hover { opacity: 0.88; }
+
+    /* ライトボックス */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightboxImg {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+    #lightboxClose {
+      position: absolute;
+      top: 16px; right: 20px;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    #lightboxClose:hover { opacity: 1; }
+
+    .gallery-strip {
+      display: flex;
+      gap: 8px;
+      padding: 8px 12px 10px;
+      background: rgba(200,151,42,0.1);
+      overflow-x: auto;
+      border-top: 1px solid rgba(200,151,42,0.2);
+    }
+
+    .gallery-strip:empty { display: none; }
+
+    .gthumb {
+      flex-shrink: 0;
+      width: 80px;
+      height: 58px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      background: #fff;
+      padding: 0;
+      transition: border-color 0.2s;
+    }
+
+    .gthumb.active { border-color: var(--gold); }
+
+    .gthumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-status {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    .modal-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .modal-cat {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--text-l);
+      font-weight: 300;
+    }
+
+    .modal-body {
+      padding: 1.5rem 2rem 2rem;
+    }
+
+    .modal-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 1.4rem;
+    }
+
+    .modal-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-m);
+      line-height: 1.9;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-section-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 0.7rem;
+    }
+
+    .modal-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-points li {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-m);
+      line-height: 1.7;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .modal-points li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.55rem;
+      top: 0.3rem;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .modal-link {
+      display: block;
+      width: calc(100% - 4rem);
+      margin: 1.5rem 2rem 0.6rem;
+      padding: 0.85rem;
+      background: var(--orange);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+
+    .modal-link:hover { background: var(--brown-m); }
+
+    .modal-close {
+      display: block;
+      width: calc(100% - 4rem);
+      margin: 0 2rem 2rem;
+      padding: 0.85rem;
+      background: transparent;
+      color: var(--orange);
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .modal-close:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid var(--border-l);
+      background: rgba(255,250,244,0.6);
+    }
+
+    .footer-orn {
+      font-size: 0.65rem;
+      letter-spacing: 0.6em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--text-l);
+    }
+
+    /* ══════════════════════════════
+       ABOUT
+    ══════════════════════════════ */
+    .about {
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 620px;
+      margin: 0 auto;
+      background: rgba(255,250,244,0.75);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 4px 32px rgba(200,151,42,0.08);
+    }
+
+    .about-avatar {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-l), 0 6px 20px rgba(200,151,42,0.3);
+    }
+
+    .about-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-title-en {
+      font-size: 0.65rem;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-role {
+      font-size: 0.72rem;
+      color: var(--orange-l);
+      letter-spacing: 0.2em;
+      margin-bottom: 1.8rem;
+      font-weight: 500;
+    }
+
+    .about-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-l);
+      margin: 0 auto 1.8rem;
+    }
+
+    .about-lead {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--orange);
+      letter-spacing: 0.06em;
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+    }
+
+    .about-body {
+      font-size: 0.83rem;
+      color: var(--text-m);
+      line-height: 2;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .about-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .about-badge {
+      font-size: 0.7rem;
+      color: var(--orange);
+      border: 1px solid rgba(192,98,26,0.3);
+      border-radius: 999px;
+      padding: 4px 14px;
+      letter-spacing: 0.05em;
+      background: rgba(255,250,244,0.8);
+    }
+
+    .about-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .about-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .about-btn:hover { opacity: 0.82; transform: translateY(-1px); }
+
+    .about-btn-line {
+      background: #06C755;
+      color: #fff;
+    }
+
+    .about-btn-mail {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .about-btn-insta {
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      color: #fff;
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 580px) {
+      .hero-stats { gap: 1.8rem; }
+      .cards-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <img src="chara1.png"
+       alt="ひのえキャラクター"
+       class="hero-sun"
+       onerror="this.style.display='none'">
+  <p class="hero-orn">✦ &nbsp; H I N O E &nbsp; ✦</p>
+  <h1 class="hero-title">ひのえの<br><span>作品集</span></h1>
+  <p class="hero-sub">AIと一緒に、想いをかたちにしてきた軌跡</p>
+  <div class="hero-divider"></div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">7<span class="stat-unit"> 本</span></div>
+      <div class="stat-label">アプリ・作品</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4<span class="stat-unit"> 種</span></div>
+      <div class="stat-label">占い・東洋思想</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1<span class="stat-unit"> 本</span></div>
+      <div class="stat-label">LINE稼働中</div>
+    </div>
+  </div>
+  <a href="#works" class="hero-btn">✦ &nbsp; 作品を見る &nbsp; ✦</a>
+</section>
+
+<!-- ── WORKS ── -->
+<div id="works">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-orn">✦ &nbsp; A L L &nbsp; W O R K S &nbsp; ✦</span>
+      <h2 class="section-title">す べ て の 作 品</h2>
+      <p class="section-sub">カードをクリックすると詳細が見られます</p>
+    </div>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-avatar">
+      <img src="hinoe-prof.png" alt="朝生ひのえ">
+    </div>
+    <p class="about-title-en">✦ &nbsp; hinoe &nbsp; ✦</p>
+    <h2 class="about-name">朝生 ひのえ</h2>
+    <p class="about-role">占術家・講師・アプリ開発者</p>
+    <div class="about-divider"></div>
+    <p class="about-lead">「集客に手間をかけず、<br>お客様と向き合う時間を増やしたい」</p>
+    <p class="about-body">
+      四柱推命・タロットを扱う占術家として、自分のビジネスに必要なものをAIと一緒に作ってきました。
+      診断アプリ・LINE Bot・デジタル名刺——現場で使いながら育てた7本の作品がその証拠です。<br><br>
+      アプリをひとつ触れるだけで、「この人、面白い」「もっと知りたい」——そんな気持ちが自然と生まれる。
+      占い師の世界観をアプリに込めることで、まだ会ったことのないお客様とも、すでに距離が縮まっている。
+      それが、ひのえのアプリ作りの根っこにある考えです。<br><br>
+      現場を知っているからこそ、あなたに本当に必要な仕組みがわかる。まずは気軽にご相談ください。
+    </p>
+    <div class="about-badges">
+      <span class="about-badge">📗 電子書籍「心に太陽を。」著者</span>
+      <span class="about-badge">📱 7本のアプリ・ツール開発</span>
+      <span class="about-badge">🟢 LINE Bot 稼働中</span>
+    </div>
+    <div class="about-links">
+      <a href="mailto:hinoe.suimei@gmail.com" class="about-btn about-btn-mail">✉ &nbsp;メールで相談</a>
+      <a href="https://www.instagram.com/hinoe.suimei" class="about-btn about-btn-insta">📸 &nbsp;Instagram DM</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</span>
+  <p>ひのえ &nbsp;—&nbsp; AIと一緒に作った、想いの結晶</p>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-gallery">
+      <div class="gallery-main" id="galleryMain"></div>
+      <div class="gallery-strip" id="galleryStrip"></div>
+    </div>
+    <div class="modal-top">
+      <span class="modal-orn">✦ &nbsp; &nbsp; ✦ &nbsp; &nbsp; ✦</span>
+      <div class="modal-status" id="modalStatus"></div>
+      <h2 class="modal-name" id="modalName"></h2>
+      <p class="modal-cat" id="modalCat"></p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-divider"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <p class="modal-section-title">✦ &nbsp; ポイント &nbsp; ✦</p>
+      <ul class="modal-points" id="modalPoints"></ul>
+      <p class="modal-section-title">✦ &nbsp; 使用技術 &nbsp; ✦</p>
+      <div class="modal-tags" id="modalTags"></div>
+    </div>
+    <a class="modal-link" id="modalLink" href="#" target="_blank" rel="noopener" style="display:none;">▶ &nbsp; 実際に触ってみる</a>
+    <button class="modal-close" id="modalClose">✦ &nbsp; 閉じる &nbsp; ✦</button>
+  </div>
+</div>
+
+<script>
+const works = [
+  {
+    name: "タロット占い",
+    emoji: "🌟",
+    thumb: "tarot-top.png",
+    images: ["tarot-top.png", "tarot-shuffle.png", "tarot-thumb.png"],
+    url: "https://hinoesuimei.github.io/tarot-app/",
+    status: "done",
+    statusLabel: "✦ 完 成",
+    statusCls: "status-done",
+    category: "タロット × 五行",
+    desc: "大アルカナと五行カードを同時に引き、\n2枚の意味をMixした総合判定。\n思考の特徴に基づくアドバイスが届くオリジナルタロット占いアプリ。",
+    points: [
+      "大アルカナ × 五行カードの2枚同時引き",
+      "2枚の意味を組み合わせたMix判定",
+      "思考の特徴に合わせた「ひのえの一言アドバイス」付き",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+  },
+  {
+    name: "五行思考タイプ診断",
+    emoji: "🌳",
+    thumb: "gokyo-top.png",
+    images: ["gokyo-top.png", "gokyo-result.png"],
+    url: "https://hinoesuimei.github.io/gokyo/",
+    status: "done",
+    statusLabel: "✦ 完 成",
+    statusCls: "status-done",
+    category: "五行 診断",
+    desc: "木・火・土・金・水の5タイプから、あなたの思考パターンを診断。強み・弱みの解説に加え、なぜそう考えるのかを命式から紐解く、ひのえオリジナルの思考診断。",
+    points: [
+      "10問で木・火・土・金・水の思考タイプを判定",
+      "タイプ別の強み・弱みを詳しく解説",
+      "「なぜそう考えるのか」を命式（四柱推命）と紐づけて深掘り",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "Google Fonts", "GitHub Pages"],
+  },
+  {
+    name: "四柱推命 命式作成",
+    emoji: "📅",
+    thumb: "meisiki-01.png",
+    images: ["meisiki-01.png", "meisiki-02.png", "meisiki-03.png", "meisiki-04.png", "meisiki-05.png"],
+    url: "https://hinoesuimei.github.io/shichusuimei/",
+    status: "done",
+    statusLabel: "✦ 完 成",
+    statusCls: "status-done",
+    category: "四柱推命",
+    desc: "生年月日・時刻・出生地を入力するだけで、本格命式を自動算出。命式表・大運・年運・月運に加え、ひのえ独自の「五行×思考」バランス図、そして最大の特徴である天中殺カレンダー（印刷対応）まで一括表示。",
+    points: [
+      "天中殺カレンダーを自動生成・印刷対応（最大のポイント）",
+      "五行バランス図に「思考」視点を追加 — ひのえ流の独自解釈",
+      "命式表・大運10年・年運・月運まで全網羅",
+    ],
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    name: "四柱推命×易占い",
+    emoji: "☯️",
+    thumb: "hakkua-top.png",
+    images: ["hakkua-top.png", "hakkua-sticks.png", "hakkua-result.png"],
+    url: "https://hinoesuimei.github.io/shichusumei-eki/",
+    status: "done",
+    statusLabel: "✦ 完 成",
+    statusCls: "status-done",
+    category: "四柱推命 × 易",
+    desc: "生年月日を入力すると、四柱推命と易（えき）を組み合わせて「今日の流れ」を読み解くオリジナル占い。命式の情報を易と掛け合わせ、その日のエネルギーと指針を示します。",
+    points: [
+      "生年月日から四柱推命の日干を自動算出",
+      "易の卦と組み合わせ「今日の流れ」を判定",
+      "日干×卦で導く、ひのえオリジナルのメッセージ",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+  },
+  {
+    name: "日干診断 LINE Bot",
+    emoji: "📱",
+    thumb: "line-thumb.png",
+    images: ["line-thumb.png", "line-input.png"],
+    status: "live",
+    statusLabel: "🟢 稼 働 中",
+    statusCls: "status-live",
+    category: "LINE Bot 設計・構築",
+    desc: "あなたの公式LINEアカウントに、自動応答ボットを設計・構築します。ボタンをタップするだけでキーワードが自動送信され、あなたのコンテンツを自動で届ける仕組みをゼロから開発。特典内容はご要望に合わせてカスタマイズ。",
+    points: [
+      "ボタンタップ→キーワード自動送信のワンタッチ設計",
+      "診断・PDF配布など、特典内容はフルカスタマイズ（※画像は構築例）",
+      "あなたのブランド・世界観に合わせてフルオーダー",
+    ],
+    tags: ["Python", "LINE Messaging API", "FastAPI", "Render"],
+  },
+  {
+    name: "インスタぽん",
+    emoji: "📸",
+    status: "wip",
+    statusLabel: "🚧 開 発 中",
+    statusCls: "status-wip",
+    category: "インスタ作成",
+    desc: "「もっと楽に、でも自分らしく投稿したい」——その想いから生まれたアプリ。好きな画像を選ぶだけで、投稿用ファイルをぽんと作成。でも、投稿は自分の手でする。それは、あなたの気持ちをあなたの言葉で届けるため。全自動がすべてではない。最後の一歩は、あなたが踏み出すから意味がある。",
+    points: [
+      "好きな画像でリール・フィード・ストーリーズのファイルをすぐ作成",
+      "投稿は自分でする設計——「自分の気持ちを届ける」という想いを大切に",
+      "全自動ではなく最終判断は自分で。それがこのアプリのこだわり",
+    ],
+    tags: ["React", "TypeScript", "FastAPI", "Python"],
+  },
+  {
+    name: "デジタル名刺",
+    emoji: "🪪",
+    thumb: "meishi-card-thumb.png",
+    images: ["meishi-card-thumb.png", "meishi-links.png"],
+    url: "https://hinoesuimei.github.io/hinoe-links",
+    demo: true,
+    status: "idea",
+    statusLabel: "💡 商品化予定",
+    statusCls: "status-idea",
+    category: "デジタルツール",
+    desc: "名刺はシンプルでいい。QRを読み込めば、相手は必要な項目だけ選んでタップ——連絡もSNSフォローも、その場で完結。渡す側も受け取る側も、ストレスゼロ。ごちゃごちゃ書かない。それがこれからのスマートなビジネスカードのかたち。",
+    points: [
+      "QRひとつでリンクページへ——連絡・SNS・問い合わせがワンタップで完結",
+      "受け取った相手が「自分に必要なもの」だけ選べる、新しい名刺スタイル",
+      "PDF出力→格安印刷サービスへ入稿するだけ。コストを抑えて本格的な仕上がり",
+    ],
+    tags: ["HTML", "CSS", "Noto Serif JP", "QRコード", "GitHub Pages"],
+  },
+];
+
+// カード生成
+const grid = document.getElementById('cardsGrid');
+works.forEach((w, i) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const thumbHtml = w.thumb
+    ? `<div class="card-thumb-screen">
+         <img src="${w.thumb}" alt="${w.name}" loading="lazy">
+         <span class="card-status ${w.statusCls}">${w.statusLabel}</span>
+       </div>`
+    : `<div class="card-thumb">
+         <div class="card-thumb-orn">✦ &nbsp; &nbsp; ✦ &nbsp; &nbsp; ✦</div>
+         <div class="card-img">${w.emoji}</div>
+         <span class="card-status ${w.statusCls}">${w.statusLabel}</span>
+       </div>`;
+
+  card.innerHTML = `
+    ${thumbHtml}
+    <div class="card-body">
+      <div class="card-orn-line">✦</div>
+      <div class="card-name">${w.name}</div>
+      <div class="card-desc">${w.desc.replace(/\n/g, ' ').slice(0, 55)}…</div>
+      <div class="card-tags">${w.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>
+  `;
+  card.addEventListener('click', () => openModal(i));
+  grid.appendChild(card);
+});
+
+// モーダル
+const overlay = document.getElementById('modalOverlay');
+
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('lightbox').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.remove('open');
+  });
+});
+
+function switchImg(src, btn) {
+  document.getElementById('galleryMainImg').src = src;
+  document.querySelectorAll('.gthumb').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function openModal(i) {
+  const w = works[i];
+  const imgs = w.images || (w.thumb ? [w.thumb] : []);
+  const mainEl = document.getElementById('galleryMain');
+  const stripEl = document.getElementById('galleryStrip');
+
+  if (imgs.length > 0) {
+    mainEl.innerHTML = `<img id="galleryMainImg" src="${imgs[0]}" alt="${w.name}" onclick="openLightbox(this.src)">`;
+    if (imgs.length > 1) {
+      stripEl.innerHTML = imgs.map((src, idx) =>
+        `<button class="gthumb${idx===0?' active':''}" onclick="switchImg('${src}',this)"><img src="${src}" alt=""></button>`
+      ).join('');
+    } else {
+      stripEl.innerHTML = '';
+    }
+  } else {
+    mainEl.textContent = w.emoji;
+    stripEl.innerHTML = '';
+  }
+
+  const st = document.getElementById('modalStatus');
+  st.textContent = w.statusLabel;
+  st.className = `modal-status ${w.statusCls}`;
+  document.getElementById('modalName').textContent = w.name;
+  document.getElementById('modalCat').textContent = w.category;
+  document.getElementById('modalDesc').innerHTML = w.desc.replace(/\n/g, '<br>');
+  document.getElementById('modalPoints').innerHTML =
+    w.points.map(p => `<li>${p}</li>`).join('');
+  document.getElementById('modalTags').innerHTML =
+    w.tags.map(t => `<span class="tag">${t}</span>`).join('');
+  const linkEl = document.getElementById('modalLink');
+  if (w.demo && w.url) {
+    linkEl.href = w.url;
+    linkEl.style.display = 'block';
+  } else {
+    linkEl.style.display = 'none';
+  }
+  document.getElementById('modal').scrollTop = 0;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+<!-- ライトボックス -->
+<div id="lightbox">
+  <span id="lightboxClose">✕</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+</body>
+</html>

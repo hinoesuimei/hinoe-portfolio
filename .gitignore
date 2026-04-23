@@ -1,0 +1,23 @@
+# Playwright開発ログ
+.playwright-mcp/
+
+# 開発用スクリーンショット
+about-*.png
+portfolio-*.png
+reference-site.png
+rain01_masked.png
+line-card-preview.html
+line-card-preview.png
+
+# 開発ドキュメント
+docs/
+mockups/
+
+# 未使用画像
+meishi-thumb.png
+meishi-view.png
+hakkua-thumb.png
+gokyo-thumb.png
+shichuu-thumb.png
+shichuu-top.png
+tarot-chara.png
