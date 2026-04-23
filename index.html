@@ -331,6 +331,18 @@
       text-align: center;
     }
 
+    .card-type {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      padding: 0.15rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+    .card-type-app  { background: #fff0e0; color: #a05010; border: 1px solid #e8c090; }
+    .card-type-biz  { background: #e8f0ff; color: #3050a0; border: 1px solid #90a8e0; }
+
     .card-tags {
       display: flex;
       flex-wrap: wrap;
@@ -913,6 +925,7 @@
 const works = [
   {
     name: "タロット占い",
+    type: "占いアプリ",
     emoji: "🌟",
     thumb: "tarot-top.png",
     images: ["tarot-top.png", "tarot-shuffle.png", "tarot-thumb.png"],
@@ -931,6 +944,7 @@ const works = [
   },
   {
     name: "五行思考タイプ診断",
+    type: "占いアプリ",
     emoji: "🌳",
     thumb: "gokyo-top.png",
     images: ["gokyo-top.png", "gokyo-result.png"],
@@ -949,6 +963,7 @@ const works = [
   },
   {
     name: "四柱推命 命式作成",
+    type: "占いアプリ",
     emoji: "📅",
     thumb: "meisiki-01.png",
     images: ["meisiki-01.png", "meisiki-02.png", "meisiki-03.png", "meisiki-04.png", "meisiki-05.png"],
@@ -967,6 +982,7 @@ const works = [
   },
   {
     name: "四柱推命×易占い",
+    type: "占いアプリ",
     emoji: "☯️",
     thumb: "hakkua-top.png",
     images: ["hakkua-top.png", "hakkua-sticks.png", "hakkua-result.png"],
@@ -984,7 +1000,8 @@ const works = [
     tags: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
   },
   {
-    name: "日干診断 LINE Bot",
+    name: "集客LINE Bot",
+    type: "ビジネスツール",
     emoji: "📱",
     thumb: "line-thumb.png",
     images: ["line-thumb.png", "line-input.png"],
@@ -1002,6 +1019,7 @@ const works = [
   },
   {
     name: "インスタぽん",
+    type: "ビジネスツール",
     emoji: "📸",
     status: "wip",
     statusLabel: "🚧 開 発 中",
@@ -1017,6 +1035,7 @@ const works = [
   },
   {
     name: "デジタル名刺",
+    type: "ビジネスツール",
     emoji: "🪪",
     thumb: "meishi-card-thumb.png",
     images: ["meishi-card-thumb.png", "meishi-links.png"],
@@ -1053,10 +1072,15 @@ works.forEach((w, i) => {
          <span class="card-status ${w.statusCls}">${w.statusLabel}</span>
        </div>`;
 
+  const typeBadge = w.type === 'ビジネスツール'
+    ? `<span class="card-type card-type-biz">⚙️ ビジネスツール</span>`
+    : `<span class="card-type card-type-app">🔮 占いアプリ</span>`;
+
   card.innerHTML = `
     ${thumbHtml}
     <div class="card-body">
       <div class="card-orn-line">✦</div>
+      ${typeBadge}
       <div class="card-name">${w.name}</div>
       <div class="card-desc">${w.desc.replace(/\n/g, ' ').slice(0, 55)}…</div>
       <div class="card-tags">${w.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
