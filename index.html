@@ -755,6 +755,33 @@
       margin-bottom: 2rem;
     }
 
+    .about-profile {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      font-size: 0.78rem;
+    }
+    .about-profile th {
+      text-align: left;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.55rem 0.8rem 0.55rem 0;
+      white-space: nowrap;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      width: 5.5em;
+    }
+    .about-profile td {
+      color: var(--text);
+      padding: 0.55rem 0 0.55rem 0.8rem;
+      line-height: 1.7;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .about-profile tr:last-child th,
+    .about-profile tr:last-child td { border-bottom: none; }
+
     .about-badges {
       display: flex;
       flex-wrap: wrap;
@@ -879,11 +906,36 @@
       それが、ひのえのアプリ作りの根っこにある考えです。<br><br>
       現場を知っているからこそ、あなたに本当に必要な仕組みがわかる。まずは気軽にご相談ください。
     </p>
-    <div class="about-badges">
-      <span class="about-badge">📗 電子書籍「心に太陽を。」著者</span>
-      <span class="about-badge">📱 7本のアプリ・ツール開発</span>
-      <span class="about-badge">🟢 LINE Bot 稼働中</span>
-    </div>
+    <table class="about-profile">
+      <tr>
+        <th>在住</th>
+        <td>愛知県</td>
+      </tr>
+      <tr>
+        <th>占い歴</th>
+        <td>5年</td>
+      </tr>
+      <tr>
+        <th>得意分野</th>
+        <td>四柱推命・タロット。迷ったときにどうすればよいか、経験と様々な視点でアドバイス。その人の本質をよみときます。</td>
+      </tr>
+      <tr>
+        <th>経歴</th>
+        <td>家族の悩みと自身の病気を経験し、占いとはどうあるべきか——その問いを胸に活動をはじめる。</td>
+      </tr>
+      <tr>
+        <th>著書</th>
+        <td>電子書籍「心に太陽を。」</td>
+      </tr>
+      <tr>
+        <th>開発実績</th>
+        <td>占いアプリ・ツール 7本</td>
+      </tr>
+      <tr>
+        <th>メッセージ</th>
+        <td>自分で考え、行動することを大切に。AIとうまく共存しながら、負担を減らし、仕事の質を上げていきたい。</td>
+      </tr>
+    </table>
     <div class="about-links">
       <a href="mailto:hinoe.suimei@gmail.com" class="about-btn about-btn-mail">✉ &nbsp;メールで相談</a>
       <a href="https://www.instagram.com/hinoe.suimei" class="about-btn about-btn-insta">📸 &nbsp;Instagram DM</a>
